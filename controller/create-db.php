@@ -21,9 +21,25 @@ if (!$exists) {
 	}
 	
 }
+//only echos when we already have a database that exists 
 else{
-		echo "successfully created databse: " . $database;
+		echo "data base already exists";
 	}
+
+	//query creates a table it is important because
+	// we need the table to exist that way we can put information in the database more
+	// specifly within the table witch is housed in the database
+	// this table is called post every post within the post needs to have an ID an title and a post text   
+	$query = $connection->query("CREATE TABLE posts("
+		. "id int(11) NOT NULL AUTO_INCREMENT,"
+		. "title varchar(255) NOT NULL,"
+		. "post text NOT NULL,"
+		. "PRIMARY KEY (id))");
+	if ($query) {
+		echo "successfully created table: posts";
+	}
+
+
 
 
 $connection->close();
