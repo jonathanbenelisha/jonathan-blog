@@ -17,13 +17,13 @@ if (!$exists) {
 	$query = $connection->query("CREATE DATABASE $database");
 // this if statement only echos out if the database is not being created
 	if ($query) {
-		echo "successfully created databse: " . $database;
+		echo "<p>successfully created databse: " . $database. "</P>";
 	}
 	
 }
 //only echos when we already have a database that exists 
 else{
-		echo "data base already exists";
+		echo "<p>data base already exists</p>";
 	}
 
 	//query creates a table it is important because
@@ -36,11 +36,13 @@ else{
 		. "post text NOT NULL,"
 		. "PRIMARY KEY (id))");
 	if ($query) {
-		echo "successfully created table: posts";
+		echo "<p>successfully created table: posts</p>";
 	}
 
+	else{
+		echo "<p>$connection->error</P>";
 
-
+	}
 
 $connection->close();
 
