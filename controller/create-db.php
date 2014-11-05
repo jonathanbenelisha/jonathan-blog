@@ -1,48 +1,58 @@
 <?php
-//the require_once statement is identical to require 
+//this is a controller, this is where the user interacts with the controller in order to modify anything in the model
+
+//in the () this is the path to the file we want included
 require_once(__DIR__ . "/../model/database.php");
 
-//this connection variable takes my variables from my database 
-//file and connects those files to my create_db file
+//in this connection variable, theres class or object that accesses info on our mysqli server
 $connection = new mysqli($host, $username, $password);
 
+//this is where we check if theres a connection error
 if($connection->connect_error){
-	die("Error: " . $connection->connect_error);
+
+//there is an error and were killing the program& were echoing whats wrong with it
+	die("<p>error: " . $connection->connect_error . "</p>");
 }
-//this exists variable is allowing 
-//me to selsect a specific database 
+
+//this is gonna access the database
 $exists = $connection->select_db($database);
 
-if (!$exists) {
+//*note the ! means its false
+// this is creating a database if it doesnt exist& running a query& there is sql language in the ()
+if(!$exists){
 	$query = $connection->query("CREATE DATABASE $database");
-// this if statement only echos out if the database is not being created
-	if ($query) {
-		echo "<p>successfully created databse: " . $database. "</P>";
-	}
-	
+
+//this is outputting a message
+if($query){
+	echo "<p>successfully executed DATABASE:" . $database . "</p>";
 }
-//only echos when we already have a database that exists 
+}
+
+//if this runs this means a database already exists
 else{
-		echo "<p>data base already exists</p>";
-	}
+	echo "<p>Database already exists</p>";
+}
 
-	//query creates a table it is important because
-	// we need the table to exist that way we can put information in the database more
-	// specifly within the table witch is housed in the database
-	// this table is called post every post within the post needs to have an ID an title and a post text   
-	$query = $connection->query("CREATE TABLE posts("
-		. "id int(11) NOT NULL AUTO_INCREMENT,"
-		. "title varchar(255) NOT NULL,"
-		. "post text NOT NULL,"
-		. "PRIMARY KEY (id))");
-	if ($query) {
-		echo "<p>successfully created table: posts</p>";
-	}
+//*note we created a table within the database, 
+//the id has 11 values within the integers (type int) id cant be NULL(empty)
+//the max characters for this varchar is 255, the title cant be null either
+//the post info is gonna have text, and its not null
+//the primary key is set to id, this is how tables are connected to each other
+$query = $connection->query("CREATE TABLE posts ("
+	. "id int(11) NOT NULL AUTO_INCREMENT,"
+	. "title varchar(255) NOT NULL,"
+	. "post text NOT NULL,"
+	. "PRIMARY KEY (id))");
 
-	else{
-		echo "<p>$connection->error</P>";
+//if this is true its been successfully created
+//*note you can only create a table once
+//else-> not true / table already exists
+if($query){
+	echo "succesfully create table: posts";
+}
+else{
+	echo "<p>$connection->error</p>";
+}
 
-	}
-
+//we are closing the connection
 $connection->close();
-
