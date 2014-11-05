@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
+<link rel="stylesheet" type="text/css" href="css/main.css">
 <body>
 
-</body>
-</html>
+
 <?php
 //view is probably where you'll get info from the model or have html code
 //* note __DIR__ concatinates
@@ -19,5 +16,8 @@
 	require_once(__DIR__ . "/view/navigation.php");
 	require_once(__DIR__ . "/controller/create-db.php");
 ?>
+
+</body>
+</html>
 
 <!-- separating everything helps make it easier to maintain our code-->
