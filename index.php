@@ -2,6 +2,11 @@
 <html>
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <body>
+<div id="div1">
+	Jonathan Benelisha
+</div>
+<div>
+	
 
 
 <?php
@@ -16,6 +21,7 @@
 	require_once(__DIR__ . "/view/navigation.php");
 	require_once(__DIR__ . "/controller/create-db.php");
 ?>
+</div>
 
 </body>
 </html>
