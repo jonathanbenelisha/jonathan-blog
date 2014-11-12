@@ -17,9 +17,9 @@ div{
 	border: 3px solid black;
 
 }
-//media query in this situation changes the color of the screen as you resize
-// media queries for iphone and ipad//
-@media only screen and (max-width: 1024px) {
+ <html> media query in this situation changes the color of the screen as you resize . media queries for iphone and ipad</html>
+
+@media only screen and (min-width: 1024px) {
 
 	html{background-color: green;}
 }

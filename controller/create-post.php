@@ -2,7 +2,7 @@
 
 	//require so we have access to variables in database.php
 	// used info to create a new mysqli
-	require_once(__DIR__ . "/../model/database.php");
+	require_once(__DIR__ . "/../model/config.php");
 
 	$connection = new mysqli($host,$username,$password,$database);
 
