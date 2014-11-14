@@ -13,6 +13,7 @@
 	$post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
 
 	// this query is to insert things into our table
+	//The INSERT INTO statement is used to insert new records in a table.
 	$query = $connection->query("INSERT INTO posts SET title = '$title', post = '$post' ");
 
 	//this is to check if the query works or not

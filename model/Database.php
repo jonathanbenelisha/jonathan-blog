@@ -15,4 +15,17 @@ class Database {
 		$this->password = $password;
 		$this->database = $database;
 	}
+
+	// were creating our new object and we will be able to call on specfic functions 
+	public function openConnection() {
+		this->connection = new mysqli($this->host, $this->username, $this->password, $this->database)
+	}
+
+	public function closeConnection(){
+
+	}
+
+	public function query($string){
+
+	}
 }
