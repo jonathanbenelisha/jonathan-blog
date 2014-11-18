@@ -9,3 +9,6 @@ $host = "localhost";
 $username = "root";
 $password = "root";
 $database = "blog_db";
+
+//based of a class, query function
+$connection = new Database($host, $username, $password, $database);

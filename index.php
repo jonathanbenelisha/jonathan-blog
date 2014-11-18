@@ -3,7 +3,7 @@
 <link rel="stylesheet" type="text/css" href="css/main.css">
 <body>
 <div id="div1">
-	Jonathan Benelisha
+	Blog Post 
 </div>
 <div>
 	
