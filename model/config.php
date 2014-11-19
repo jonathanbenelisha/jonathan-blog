@@ -1,4 +1,7 @@
 <?php
+
+require_once(__DIR__ . "/database.php");
+
 //is the path to all our project files
 	$path = "/blog/";
 
