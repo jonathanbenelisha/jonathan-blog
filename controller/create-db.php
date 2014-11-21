@@ -10,7 +10,7 @@ require_once(__DIR__ . "/../model/config.php");
 //the max characters for this varchar is 255, the title cant be null either
 //the post info is gonna have text, and its not null
 //the primary key is set to id, this is how tables are connected to each other
-$query = $connection->query("CREATE TABLE posts ("
+$query = $_SESSION["connection"]->query("CREATE TABLE posts ("
 	. "id int(11) NOT NULL AUTO_INCREMENT,"
 	. "title varchar(255) NOT NULL,"
 	. "post text NOT NULL,"
@@ -23,5 +23,5 @@ if($query){
 	echo "succesfully create table: posts";
 }
 else{
-	echo "<p>$connection->error</p>";
+	echo "<p>" . $_SESSION["connection"]->error . "</p>";
 }

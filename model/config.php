@@ -1,6 +1,8 @@
 <?php
 
-require_once(__DIR__ . "/database.php");
+require_once(__DIR__ . "/Database.php");
+
+session_start ();
 
 //is the path to all our project files
 	$path = "/blog/";
@@ -13,5 +15,10 @@ $username = "root";
 $password = "root";
 $database = "blog_db";
 
-//based of a class, query function
-$connection = new Database($host, $username, $password, $database);
+if (!isset($_SESSION["connection"])) {
+	
+	//based of a class, query function
+	$connection = new Database($host, $username, $password, $database);
+	// we can access sesion variable throughout all web pages
+	$_SESSION["connection"] = $connection;
+}
