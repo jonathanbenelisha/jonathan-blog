@@ -5,6 +5,8 @@
 <div id="div1">
 	Blog Post 
 </div>
+<article>fxdgggg</article>
+<script>$('article').readmore();</script>
 <div>
 	
 
@@ -22,7 +24,6 @@
 	require_once(__DIR__ . "/controller/create-db.php");
 ?>
 </div>
-
 </body>
 </html>
 

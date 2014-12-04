@@ -1,6 +1,14 @@
-<form>
+<?php
+	require_once(__DIR__ . "/../model/config.php");
+?>
+
+<h1>
+
+	register
+</h1>
+<form method="post" action="<?php echo $path . "controller/create-user.php"; ?>">
 <div>
-	<label for="Email"> : </label>
+	<label for="Email"> Email: </label>
 	<input type="text" name="email" />
 </div>
 	<label for="username">Username: </label>
