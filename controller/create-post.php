@@ -8,6 +8,8 @@
 	//post in the () means is info posting somewhere
 	$title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
 	$post = filter_input(INPUT_POST, "post", FILTER_SANITIZE_STRING);
+	$date = new DateTime('today');
+	$time = new DateTime('America/Los_Angeles');
 
 	// this query is to insert things into our table
 	//The INSERT INTO statement is used to insert new records in a table.
@@ -16,6 +18,7 @@
 	//this is to check if the query works or not
 	if($query){
 		echo "<p>Successfully inserted post: $title </p>";
+		echo "Posted on:" . $date->format("M/D/Y") . "at" . $time->format("g:i");
 	}
 	else{
 		echo "<p>" . $_SESSION["connection"]->error . "</p>";
