@@ -3,6 +3,7 @@
 require_once(__DIR__ . "/Database.php");
 
 session_start ();
+session_regenerate_id(true);
 
 //is the path to all our project files
 	$path = "/blog/";

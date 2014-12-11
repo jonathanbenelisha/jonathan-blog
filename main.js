@@ -1,4 +1,3 @@
-$('article').readmore({
-  speed: 75,
-  maxHeight: 500
+$('.post').readmore({
+  maxHeight: 100
 });
