@@ -10,12 +10,18 @@ body{
 
 #right{
 	height: 100%;
+	width: 100%;
 	border: 2px solid black;
 	display: inline-block;
 }
 
 .row{
 	display: inline-flex;
+
+}
+
+#blog-post{
+	text-align: center;
 }
 
 
