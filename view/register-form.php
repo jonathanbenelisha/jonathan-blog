@@ -19,7 +19,7 @@
 	</div>
 
 	<div>
-		<label for="Password">Passwword: </label>
+		<label for="Password">Password: </label>
 		<input type="password" name="password" />
 	</div>
 

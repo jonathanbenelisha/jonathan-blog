@@ -1,5 +1,11 @@
 <?php
-  require_once(__DIR__ . "/../model/config.php")
+  require_once(__DIR__ . "/../model/config.php");
+  require_once(__DIR__ . "/../controller/logn-verify.php");
+
+  if (!authenticateUser()){
+  	header("location: " . $path . "index.php");
+  	die();
+  }
 ?>
 	<!-- indicates what your about to see -->
 	<h1> Create Blog Post </h1>
